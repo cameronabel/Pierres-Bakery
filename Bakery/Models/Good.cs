@@ -9,7 +9,7 @@ namespace Bakery.Models
     {
       Label = label;
       Price = price;
-      Quantity = 0;
+      Quantity = 1;
     }
   }
 }
