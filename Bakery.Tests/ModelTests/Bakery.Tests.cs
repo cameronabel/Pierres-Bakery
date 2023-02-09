@@ -1,6 +1,5 @@
 
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
 using Bakery.Models;
 
 namespace Bakery.Tests
@@ -11,8 +10,16 @@ namespace Bakery.Tests
     [TestMethod]
     public void GoodConstructor_CreatesInstanceOfGood_Good()
     {
-      Good testGood = new Good();
+      Good testGood = new Good("");
       Assert.AreEqual(typeof(Good), testGood.GetType());
+    }
+    [TestMethod]
+    public void GoodConstructor_AssignsLabelField_String()
+    {
+      string label = "Test Item";
+      Good testGood = new Good(label);
+      string result = testGood.Label;
+      Assert.AreEqual(label, result);
     }
   }
 }
