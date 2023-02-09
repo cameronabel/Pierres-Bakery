@@ -29,5 +29,13 @@ namespace Bakery.Tests
       int result = testGood.Price;
       Assert.AreEqual(price, result);
     }
+    [TestMethod]
+    public void GoodConstructor_AssignsQuantityField_Int()
+    {
+      int quantity = 1;
+      Good testGood = new Good("Test Item", 2);
+      int result = testGood.Quantity;
+      Assert.AreEqual(quantity, result);
+    }
   }
 }
