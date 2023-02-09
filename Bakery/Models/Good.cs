@@ -7,7 +7,7 @@ namespace Bakery.Models
     public Good(string label, int price)
     {
       Label = label;
-      Price = 0;
+      Price = price;
     }
   }
 }
