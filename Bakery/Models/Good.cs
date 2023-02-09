@@ -5,6 +5,7 @@ namespace Bakery.Models
     public string Label { get; }
     public int Price { get; }
     public int Quantity { get; }
+    public int BXGO { get; }
     public Good(string label, int price)
     {
       Label = label;

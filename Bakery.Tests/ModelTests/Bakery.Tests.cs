@@ -37,5 +37,13 @@ namespace Bakery.Tests
       int result = testGood.Quantity;
       Assert.AreEqual(quantity, result);
     }
+    [TestMethod]
+    public void GoodConstructor_AssignsBXGOField_Int()
+    {
+      int bxgo = 0;
+      Good testGood = new Good("Test Item", 2);
+      int result = testGood.BXGO;
+      Assert.AreEqual(bxgo, result);
+    }
   }
 }
