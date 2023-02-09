@@ -5,7 +5,7 @@ namespace Bakery.Models
     public string Label { get; }
     public Good(string label)
     {
-      Label = "";
+      Label = label;
     }
   }
 }
