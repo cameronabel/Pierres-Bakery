@@ -3,9 +3,11 @@ namespace Bakery.Models
   public class Good
   {
     public string Label { get; }
-    public Good(string label)
+    public int Price { get; }
+    public Good(string label, int price)
     {
       Label = label;
+      Price = 0;
     }
   }
 }
