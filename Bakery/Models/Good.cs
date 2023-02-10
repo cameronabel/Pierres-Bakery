@@ -6,17 +6,22 @@ namespace Bakery.Models
     public int Price { get; set; }
     public int Quantity { get; set; }
     public int BXGO { get; set; }
-    private void MultiPrice()
+    public void MultiPrice()
     {
       Label = $"{Quantity} x {Label} @ {Price}";
-      Price = 0;
+      if (BXGO > 0)
+      {
+        int div = Quantity / (BXGO + 1);
+        int mod = Quantity % (BXGO + 1);
+        Price = Price * BXGO * div + Price * mod;
+      }
+
     }
     public Good(string label, int basePrice)
     {
       Label = label;
       Price = basePrice;
       Quantity = 1;
-      if (Quantity > 1) { MultiPrice(); }
     }
   }
 }

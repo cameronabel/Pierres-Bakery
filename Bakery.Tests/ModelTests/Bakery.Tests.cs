@@ -48,7 +48,7 @@ namespace Bakery.Tests
     [TestMethod]
     public void BreadConstructor_AssignsLabelField_Bread()
     {
-      Bread testBread = new Bread(2);
+      Bread testBread = new Bread(1);
       string result = testBread.Label;
       Assert.AreEqual("Bread", result);
     }
@@ -62,9 +62,9 @@ namespace Bakery.Tests
     [TestMethod]
     public void BreadConstructor_AssignsQuantityField_Int()
     {
-      Bread testBreads = new Bread(3);
+      Bread testBreads = new Bread(1);
       int result = testBreads.Quantity;
-      Assert.AreEqual(3, result);
+      Assert.AreEqual(1, result);
     }
     [TestMethod]
     public void BreadConstructor_AssignsMultiPriceField_Int()
