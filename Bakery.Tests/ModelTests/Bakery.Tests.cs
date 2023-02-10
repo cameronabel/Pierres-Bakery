@@ -45,5 +45,12 @@ namespace Bakery.Tests
       int result = testGood.BXGO;
       Assert.AreEqual(bxgo, result);
     }
+    [TestMethod]
+    public void BreadConstructor_AssignsLabelField_Bread()
+    {
+      Bread testBread = new Bread(2);
+      string result = testBread.Label;
+      Assert.AreEqual("Bread", result);
+    }
   }
 }
