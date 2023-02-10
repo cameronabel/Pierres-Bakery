@@ -78,7 +78,7 @@ namespace Bakery.Tests
     {
       Bread testBreads = new Bread(3);
       string result = testBreads.Label;
-      Assert.AreEqual("3 x Bread @ 5 ea", result);
+      Assert.AreEqual(@" 3 x Bread @ 5 ea", result);
     }
   }
 }

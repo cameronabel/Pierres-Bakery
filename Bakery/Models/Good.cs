@@ -6,9 +6,12 @@ namespace Bakery.Models
     public int Price { get; set; }
     public int Quantity { get; set; }
     public int BXGO { get; set; }
+    public void MultiLabel()
+    {
+      Label = $"{Quantity,2} x {Label} @ {Price} ea";
+    }
     public void MultiPrice()
     {
-      Label = $"{Quantity} x {Label} @ {Price} ea";
       if (BXGO > 0)
       {
         int div = Quantity / (BXGO + 1);

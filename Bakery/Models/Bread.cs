@@ -7,7 +7,7 @@ namespace Bakery.Models
     {
       Quantity = quantity;
       BXGO = 2;
-      if (Quantity > 1) { MultiPrice(); }
+      if (Quantity > 1) { MultiLabel(); MultiPrice(); }
     }
   }
 }
