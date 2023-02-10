@@ -73,5 +73,12 @@ namespace Bakery.Tests
       int result = testBreads.Price;
       Assert.AreEqual(10, result);
     }
+    [TestMethod]
+    public void BreadConstructor_AssignsMultiLabelField_String()
+    {
+      Bread testBreads = new Bread(3);
+      string result = testBreads.Label;
+      Assert.AreEqual("3 x Bread @ 5 ea", result);
+    }
   }
 }
