@@ -55,9 +55,16 @@ namespace Bakery.Tests
     [TestMethod]
     public void BreadConstructor_AssignsPriceField_Int()
     {
-      Bread testBread = new Bread(2);
+      Bread testBread = new Bread(1);
       int result = testBread.Price;
       Assert.AreEqual(5, result);
+    }
+    [TestMethod]
+    public void BreadConstructor_AssignsQuantityField_Int()
+    {
+      Bread testBreads = new Bread(3);
+      int result = testBreads.Quantity;
+      Assert.AreEqual(3, result);
     }
   }
 }

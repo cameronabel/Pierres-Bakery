@@ -16,6 +16,7 @@ namespace Bakery.Models
       Label = label;
       Price = basePrice;
       Quantity = 1;
+      if (Quantity > 1) { MultiPrice(); }
     }
   }
 }
