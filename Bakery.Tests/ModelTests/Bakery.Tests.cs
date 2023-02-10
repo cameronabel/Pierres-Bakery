@@ -52,5 +52,12 @@ namespace Bakery.Tests
       string result = testBread.Label;
       Assert.AreEqual("Bread", result);
     }
+    [TestMethod]
+    public void BreadConstructor_AssignsPriceField_Int()
+    {
+      Bread testBread = new Bread(2);
+      int result = testBread.Price;
+      Assert.AreEqual(5, result);
+    }
   }
 }
