@@ -66,5 +66,12 @@ namespace Bakery.Tests
       int result = testBreads.Quantity;
       Assert.AreEqual(3, result);
     }
+    [TestMethod]
+    public void BreadConstructor_AssignsMultiPriceField_Int()
+    {
+      Bread testBreads = new Bread(3);
+      int result = testBreads.Price;
+      Assert.AreEqual(10, result);
+    }
   }
 }
