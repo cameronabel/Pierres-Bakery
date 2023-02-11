@@ -50,6 +50,12 @@ namespace Bakery.Tests
   public class BreadTests
   {
     [TestMethod]
+    public void BreadConstructor_CreatesInstanceOfBread_Bread()
+    {
+      Bread testBread = new Bread(1);
+      Assert.AreEqual(typeof(Bread), testBread.GetType());
+    }
+    [TestMethod]
     public void BreadConstructor_AssignsLabelField_Bread()
     {
       Bread testBread = new Bread(1);
@@ -89,6 +95,12 @@ namespace Bakery.Tests
   public class PastryTests
   {
     [TestMethod]
+    public void PastryConstructor_CreatesInstanceOfPastry_Pastry()
+    {
+      Pastry testPastry = new Pastry(1);
+      Assert.AreEqual(typeof(Pastry), testPastry.GetType());
+    }
+    [TestMethod]
     public void PastryConstructor_AssignsLabelField_Pastry()
     {
       Pastry testPastry = new Pastry(1);
@@ -122,6 +134,16 @@ namespace Bakery.Tests
       Pastry testPastries = new Pastry(3);
       string result = testPastries.Label;
       Assert.AreEqual(@" 3 x Pastry @ 2 ea B3G1 DEAL", result);
+    }
+  }
+  [TestClass]
+  public class OrderTests
+  {
+    [TestMethod]
+    public void OrderConstructor_CreatesInstanceOfOrder_Order()
+    {
+      Order testOrder = new Order();
+      Assert.AreEqual(typeof(Order), testOrder.GetType());
     }
   }
 }
