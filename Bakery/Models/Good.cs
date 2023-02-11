@@ -9,6 +9,10 @@ namespace Bakery.Models
     public void MultiLabel()
     {
       Label = $"{Quantity,2} x {Label} @ {Price} ea";
+      if (BXGO > 0)
+      {
+        Label += $" B{BXGO}G1 DEAL";
+      }
     }
     public void MultiPrice()
     {
