@@ -45,6 +45,10 @@ namespace Bakery.Tests
       int result = testGood.BXGO;
       Assert.AreEqual(bxgo, result);
     }
+  }
+  [TestClass]
+  public class BreadTests
+  {
     [TestMethod]
     public void BreadConstructor_AssignsLabelField_Bread()
     {
@@ -79,6 +83,45 @@ namespace Bakery.Tests
       Bread testBreads = new Bread(3);
       string result = testBreads.Label;
       Assert.AreEqual(@" 3 x Bread @ 5 ea B2G1 DEAL", result);
+    }
+  }
+  [TestClass]
+  public class PastryTests
+  {
+    [TestMethod]
+    public void PastryConstructor_AssignsLabelField_Pastry()
+    {
+      Pastry testPastry = new Pastry(1);
+      string result = testPastry.Label;
+      Assert.AreEqual("Pastry", result);
+    }
+    [TestMethod]
+    public void PastryConstructor_AssignsPriceField_Int()
+    {
+      Pastry testPastry = new Pastry(1);
+      int result = testPastry.Price;
+      Assert.AreEqual(2, result);
+    }
+    [TestMethod]
+    public void PastryConstructor_AssignsQuantityField_Int()
+    {
+      Pastry testPastries = new Pastry(1);
+      int result = testPastries.Quantity;
+      Assert.AreEqual(1, result);
+    }
+    [TestMethod]
+    public void PastryConstructor_AssignsMultiPriceField_Int()
+    {
+      Pastry testPastries = new Pastry(4);
+      int result = testPastries.Price;
+      Assert.AreEqual(6, result);
+    }
+    [TestMethod]
+    public void PastryConstructor_AssignsMultiLabelField_String()
+    {
+      Pastry testPastries = new Pastry(3);
+      string result = testPastries.Label;
+      Assert.AreEqual(@" 3 x Pastry @ 2 ea B3G1 DEAL", result);
     }
   }
 }
