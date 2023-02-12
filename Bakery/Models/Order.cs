@@ -20,10 +20,13 @@ namespace Bakery.Models
     public string StringReceipt()
     {
       string receipt = "";
+      int total = 0;
       foreach (Good good in Cart)
       {
         receipt += $"    {good.Label,32}    {good.Price,4}    \n";
+        total += good.Price;
       }
+      receipt += $"{total,44}    ";
       return receipt;
     }
     public Order()
