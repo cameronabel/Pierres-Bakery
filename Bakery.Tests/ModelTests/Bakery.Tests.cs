@@ -171,7 +171,7 @@ namespace Bakery.Tests
       Order testOrder = new Order();
       Bread testBread = new Bread(1);
       testOrder.AddGood(testBread);
-      string expectedReceipt = $"    {"Bread",32}    {"5",4}    \n";
+      string expectedReceipt = $"    {"Bread",32}    {"5",4}    \n{"5",44}    ";
       Assert.AreEqual(expectedReceipt, testOrder.StringReceipt());
     }
     [TestMethod]
@@ -182,7 +182,7 @@ namespace Bakery.Tests
       Pastry testPastries = new Pastry(4);
       testOrder.AddGood(testBread);
       testOrder.AddGood(testPastries);
-      string expectedReceipt = $"    {"Bread",32}    {"5",4}    \n    {" 4 x Pastry @ 2 ea B3G1 DEAL",32}    {"6",4}    \n";
+      string expectedReceipt = $"    {"Bread",32}    {"5",4}    \n    {" 4 x Pastry @ 2 ea B3G1 DEAL",32}    {"6",4}    \n{"11",44}    ";
       Assert.AreEqual(expectedReceipt, testOrder.StringReceipt());
     }
   }
