@@ -30,6 +30,7 @@ namespace Bakery.Models
 
 
     }
+    public int GetTotalPrice() => Cart.Select(good => good.Price).Sum();
     public void AddGood(dynamic good)
     {
       if (good.Quantity == 1)
@@ -69,6 +70,7 @@ namespace Bakery.Models
         receipt += $"    {good.Label,32}    {good.Price,4}    \n";
         total += good.Price;
       }
+      receipt += $"    {new string('─', 40)}    \n";
       receipt += $"{total,44}    ";
       return receipt;
     }
