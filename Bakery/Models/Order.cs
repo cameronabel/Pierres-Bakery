@@ -69,7 +69,7 @@ namespace Bakery.Models
         total += good.Price;
       }
       receipt += $"    {new string('─', 40)}    \n";
-      receipt += $"{total,44}    ";
+      receipt += $"{"TOTAL: " + total.ToString(),44}    ";
       return receipt;
     }
     public Order()
