@@ -132,9 +132,9 @@ namespace Bakery.Tests
     [TestMethod]
     public void PastryConstructor_AssignsMultiLabelField_String()
     {
-      Pastry testPastries = new Pastry(3);
+      Pastry testPastries = new Pastry(4);
       string result = testPastries.Label;
-      Assert.AreEqual(@" 3 x Pastry @ 2 ea B3G1 DEAL", result);
+      Assert.AreEqual(@" 4 x Pastry @ 2 ea B3G1 DEAL", result);
     }
   }
   [TestClass]
@@ -166,12 +166,23 @@ namespace Bakery.Tests
       Assert.AreEqual(1, testOrder.Cart.Count);
     }
     [TestMethod]
-    public void StringReceipt_ReturnsStringReceipt_String()
+    public void StringReceipt_ReturnsStringReceipt_SingleGood()
     {
       Order testOrder = new Order();
       Bread testBread = new Bread(1);
       testOrder.AddGood(testBread);
-      string expectedReceipt = $"    {"Bread",32}            ";
+      string expectedReceipt = $"    {"Bread",32}            \n";
+      Assert.AreEqual(expectedReceipt, testOrder.StringReceipt());
+    }
+    [TestMethod]
+    public void StringReceipt_ReturnsStringReceipt_MultipleGoods()
+    {
+      Order testOrder = new Order();
+      Bread testBread = new Bread(1);
+      Pastry testPastries = new Pastry(4);
+      testOrder.AddGood(testBread);
+      testOrder.AddGood(testPastries);
+      string expectedReceipt = $"    {"Bread",32}            \n    {" 4 x Pastry @ 2 ea B3G1 DEAL",32}            \n";
       Assert.AreEqual(expectedReceipt, testOrder.StringReceipt());
     }
   }
