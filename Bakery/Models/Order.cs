@@ -27,8 +27,6 @@ namespace Bakery.Models
       {
         return good.Price;
       }
-
-
     }
     public int GetTotalPrice() => Cart.Select(good => good.Price).Sum();
     public void AddGood(dynamic good)

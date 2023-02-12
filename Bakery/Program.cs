@@ -10,6 +10,12 @@ namespace Bakery
       Console.WriteLine($"Your total due is ${order.GetTotalPrice()}.");
       Console.WriteLine("Press Return for your receipt.");
       Console.ReadLine();
+      string receiptHeader = $@"
+            la Boulangerie de Pierre
+              {DateTime.Now}
+                  Order #: {order.ID}
+";
+      Console.WriteLine(receiptHeader);
       Console.WriteLine(order.StringReceipt());
     }
     private static void ParseUserInput(string userInput, Order order)
