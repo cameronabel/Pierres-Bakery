@@ -222,5 +222,15 @@ namespace Bakery.Tests
       Order testOrder = new Order();
       Assert.AreEqual(0, testOrder.GetTotalPrice());
     }
+    [TestMethod]
+    public void GetTotalPrice_TestOrderCalculatesCost_23()
+    {
+      Order testOrder = new Order();
+      testOrder.AddGood(new Bread(3));
+      testOrder.AddGood(new Bread());
+      testOrder.AddGood(new Pastry(4));
+      testOrder.AddGood(new Pastry());
+      Assert.AreEqual(23, testOrder.GetTotalPrice());
+    }
   }
 }
