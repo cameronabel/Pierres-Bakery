@@ -24,7 +24,6 @@ namespace Bakery.Models
         int mod = Quantity % (BXGO + 1);
         Price = _basePrice * BXGO * div + _basePrice * mod;
       }
-
     }
     public Good(string name, int basePrice)
     {
