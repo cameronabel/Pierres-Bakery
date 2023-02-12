@@ -22,7 +22,7 @@ namespace Bakery.Models
       string receipt = "";
       foreach (Good good in Cart)
       {
-        receipt += $"    {good.Label,32}            \n";
+        receipt += $"    {good.Label,32}    {good.Price,4}    \n";
       }
       return receipt;
     }
