@@ -35,6 +35,10 @@ namespace Bakery.Models
       if (good.Quantity == 1)
       {
         good.Price = ConfirmPrice(good);
+        if (good.Price == 0)
+        {
+          good.Label += $" B{good.BXGO}G1 DEAL";
+        }
         Cart.Add(good);
       }
       else

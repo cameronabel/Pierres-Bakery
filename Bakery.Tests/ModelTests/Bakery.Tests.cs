@@ -205,5 +205,16 @@ namespace Bakery.Tests
       string expectedReceipt = $"    {"Bread",32}    {"5",4}    \n    {"Bread",32}    {"5",4}    \n{"10",44}    ";
       Assert.AreEqual(expectedReceipt, testOrder.StringReceipt());
     }
+    [TestMethod]
+    public void ConfirmPrice_ProperlyCalculatesPrice_BOGOPrice()
+    {
+      Order testOrder = new Order();
+      Bread testBread = new Bread(2);
+      Bread thirdBread = new Bread();
+      testOrder.AddGood(testBread);
+      testOrder.AddGood(thirdBread);
+      string expectedReceipt = $"    {"Bread",32}    {"5",4}    \n    {"Bread",32}    {"5",4}    \n    {"Bread B2G1 DEAL",32}    {"0",4}    \n{"10",44}    ";
+      Assert.AreEqual(expectedReceipt, testOrder.StringReceipt());
+    }
   }
 }
