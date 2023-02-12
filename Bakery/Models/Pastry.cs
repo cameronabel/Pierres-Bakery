@@ -2,6 +2,7 @@ namespace Bakery.Models
 {
   public class Pastry : Good
   {
+    public Pastry() : this(1) { }
     public Pastry(int quantity)
       : base("Pastry", 2)
     {

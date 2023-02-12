@@ -1,4 +1,6 @@
 using System.Collections.Generic;
+using System;
+using System.Linq;
 
 namespace Bakery.Models
 {
@@ -13,9 +15,46 @@ namespace Bakery.Models
     {
       _runningCounter = 0;
     }
-    public void AddGood(Good good)
+    private int ConfirmPrice(Good good)
     {
-      Cart.Add(good);
+      int tally = Cart.Select(x => x.Quantity).Sum();
+      int mod = tally % (good.BXGO + 1);
+      if (mod == good.BXGO)
+      {
+        return 0;
+      }
+      else
+      {
+        return good.Price;
+      }
+
+
+    }
+    public void AddGood(dynamic good)
+    {
+      if (good.Quantity == 1)
+      {
+        good.Price = ConfirmPrice(good);
+        Cart.Add(good);
+      }
+      else
+      {
+        int div = good.Quantity / (good.BXGO + 1);
+        int mod = good.Quantity % (good.BXGO + 1);
+        if (div > 0)
+        {
+          good.Quantity = div * (good.BXGO + 1);
+          good.MultiLabel();
+          good.MultiPrice();
+          Cart.Add(good);
+        }
+        Type T = good.GetType();
+        for (int i = 0; i < mod; i++)
+        {
+          Object newGood = Activator.CreateInstance(T);
+          AddGood(newGood);
+        }
+      }
     }
     public string StringReceipt()
     {
