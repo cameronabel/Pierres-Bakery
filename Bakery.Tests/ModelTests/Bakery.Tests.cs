@@ -165,5 +165,14 @@ namespace Bakery.Tests
       testOrder.AddGood(testBread);
       Assert.AreEqual(1, testOrder.Cart.Count);
     }
+    [TestMethod]
+    public void ToString_ReturnsStringReceipt_String()
+    {
+      Order testOrder = new Order();
+      Bread testBread = new Bread(1);
+      testOrder.AddGood(testBread);
+      string expectedReceipt = $"    {"Bread",32}            ";
+      Assert.AreEqual(expectedReceipt, testOrder.ToString());
+    }
   }
 }

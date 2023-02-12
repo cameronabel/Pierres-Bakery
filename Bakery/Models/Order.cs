@@ -17,6 +17,15 @@ namespace Bakery.Models
     {
       Cart.Add(good);
     }
+    public string StringReceipt()
+    {
+      string receipt = "";
+      foreach (Good good in Cart)
+      {
+
+      }
+      return receipt;
+    }
     public Order()
     {
       _runningCounter++;
