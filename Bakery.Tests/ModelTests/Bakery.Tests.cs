@@ -1,6 +1,7 @@
 
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Bakery.Models;
+using System;
 
 namespace Bakery.Tests
 {
@@ -137,13 +138,24 @@ namespace Bakery.Tests
     }
   }
   [TestClass]
-  public class OrderTests
+  public class OrderTests : IDisposable
   {
+    public void Dispose()
+    {
+      Order.ClearAll();
+    }
+
     [TestMethod]
     public void OrderConstructor_CreatesInstanceOfOrder_Order()
     {
       Order testOrder = new Order();
       Assert.AreEqual(typeof(Order), testOrder.GetType());
+    }
+    [TestMethod]
+    public void OrderConstructor_Assigns_NextOrderNumber_Int()
+    {
+      Order testOrder = new Order();
+      Assert.AreEqual(1, testOrder.ID);
     }
   }
 }
