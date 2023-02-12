@@ -157,5 +157,13 @@ namespace Bakery.Tests
       Order testOrder = new Order();
       Assert.AreEqual(1, testOrder.ID);
     }
+    [TestMethod]
+    public void AddGood_AddsGoodToCart_UpdatedCart()
+    {
+      Order testOrder = new Order();
+      Bread testBread = new Bread(1);
+      testOrder.AddGood(testBread);
+      Assert.AreEqual(1, testOrder.Cart.Count);
+    }
   }
 }

@@ -13,10 +13,15 @@ namespace Bakery.Models
     {
       _runningCounter = 0;
     }
+    public void AddGood(Good good)
+    {
+      Cart.Add(good);
+    }
     public Order()
     {
       _runningCounter++;
       ID = _runningCounter;
+
     }
   }
 }
