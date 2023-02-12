@@ -21,7 +21,7 @@ namespace Bakery.Models
     {
       _runningCounter++;
       ID = _runningCounter;
-
+      Cart = new List<Good>() { };
     }
   }
 }
